@@ -1,19 +1,11 @@
+FROM python:3.8-slim
 
-# 
-FROM python:3.11-slim
+WORKDIR /app
 
+RUN apt update && apt install -y curl && apt-get -y install libpq-dev gcc
 
-# 
-WORKDIR /code
+COPY requirements.txt /app
+RUN pip3 install -r requirements.txt
 
-# 
-COPY ./requirements.txt /code/requirements.txt
-
-# 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-
-# 
-COPY ./app /code/app
-
-# 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s \
+    CMD curl --fail http://localhost:8002/health || exit 1
