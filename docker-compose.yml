@@ -1,0 +1,23 @@
+version: "3"
+services:
+  tg_bot_service:
+    image: botimage
+    environment:
+      - TELEGRAM_TOKEN=
+    networks:
+      - my-network
+    restart: always
+
+
+  fastapi_service:
+    image: apiimage
+    networks:
+      - my-network
+    ports: 
+      - '80:80'
+    restart: always
+    
+networks:
+  my-network:
+
+

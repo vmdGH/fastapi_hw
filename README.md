@@ -1,8 +1,8 @@
 
-# FastAPI Homework
+# DevOps homework
 ### by Matvey Vasilev
 
-# FastAPI Tasks
+# fast_api service
 
 1. The path is implemented /
 2. Implemented path /post https://hw-fastapi.onrender.com
@@ -11,17 +11,6 @@
 5. The list of dogs by type is implemented https://hw-fastapi.onrender.com/dog?kind=bulldog
 6. Implemented the update of the dog by id
 
+# telegram_bot
 
-# fastapi_hw
-FastAPI Homework
 
-# Docker part
-
-## pull image
-docker pull matveyvasilev/fastapiimage:tag
-
-## run container
-docker run -d --name mycontainer -p 80:80 matveyvasilev/fastapiimage:tag
-
-## open swagger UI
-http://localhost/docs

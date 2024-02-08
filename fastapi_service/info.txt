@@ -1,0 +1,4 @@
+Запустить сервис: uvicorn main:app --reload
+
+Открыть сервис в Swagger UI: http://127.0.0.1:8000/docs
+Открыть сервис в ReDoc: http://127.0.0.1:8000/redoc
